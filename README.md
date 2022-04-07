@@ -9,15 +9,15 @@ Uderson Luiz Fermino -  uderson@gmail.com
 
 # Arquivos disponibilizados
 
-**deployment/deployment-app.yml** - Arquivo que contém a configuração da aplicação blog-django-py
-**deployment/deployment-db.yml** - Arquivo que contém a configuração do banco de dados sample-database
-**hpa/hpa.yml** - Arquivo que contém as configurações de auto escalabilidada da aplicação
-**pvc/pvc.yml** - Arquivo que contém as configurações do volume persistente do banco de dados
-**route/route.yml** - Arquivo que contém as configurações de rota da aplicação
-**secret/secret-app.yml** - Arquivo que contém as informações de segurança da aplicação
-**secret/secret-db.yml** - Arquivo que contém as informações de segurança do banco de dados
-**service/service-app.yml** - Arquivo que contém as informações dos serviços de mapeamento de porta e endereço da aplicação
-**service/service-db.yml** - Arquivo que contém as informações dos serviços de mapeamento de porta e endereço do banco de dados
+**deployment/deployment-app.yml** - Arquivo que contém a configuração da aplicação blog-django-py.
+**deployment/deployment-db.yml** - Arquivo que contém a configuração do banco de dados sample-database.
+**hpa/hpa.yml** - Arquivo que contém as configurações de auto escalabilidada da aplicação.
+**pvc/pvc.yml** - Arquivo que contém as configurações do volume persistente do banco de dados.
+**route/route.yml** - Arquivo que contém as configurações de rota da aplicação.
+**secret/secret-app.yml** - Arquivo que contém as informações de segurança da aplicação.
+**secret/secret-db.yml** - Arquivo que contém as informações de segurança do banco de dados.
+**service/service-app.yml** - Arquivo que contém as informações dos serviços de mapeamento de porta e endereço da aplicação.
+**service/service-db.yml** - Arquivo que contém as informações dos serviços de mapeamento de porta e endereço do banco de dados.
 
 # Projeto do blog GIT
 
