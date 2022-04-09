@@ -1,0 +1,72 @@
+kind: Service
+apiVersion: v1
+metadata:
+  annotations:
+    app.openshift.io/vcs-ref: ''
+    app.openshift.io/vcs-uri: 'https://github.com/openshift-instruqt/blog-django-py'
+    openshift.io/generated-by: OpenShiftWebConsole
+  selfLink: /api/v1/namespaces/fiap-lab4chain-rm342579/services/blog-django-py
+  resourceVersion: '54348454'
+  name: blog-django-py
+  uid: 815b4424-8de8-46f6-9d94-b29d7078e371
+  creationTimestamp: '2022-04-06T23:37:10Z'
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: v1
+      time: '2022-04-06T23:37:10Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:app.openshift.io/vcs-ref': {}
+            'f:app.openshift.io/vcs-uri': {}
+            'f:openshift.io/generated-by': {}
+          'f:labels':
+            .: {}
+            'f:app': {}
+            'f:app.kubernetes.io/component': {}
+            'f:app.kubernetes.io/instance': {}
+            'f:app.kubernetes.io/name': {}
+            'f:app.kubernetes.io/part-of': {}
+            'f:app.openshift.io/runtime': {}
+            'f:app.openshift.io/runtime-version': {}
+        'f:spec':
+          'f:ports':
+            .: {}
+            'k:{"port":8080,"protocol":"TCP"}':
+              .: {}
+              'f:name': {}
+              'f:port': {}
+              'f:protocol': {}
+              'f:targetPort': {}
+          'f:selector':
+            .: {}
+            'f:app': {}
+            'f:deploymentconfig': {}
+          'f:sessionAffinity': {}
+          'f:type': {}
+  namespace: fiap-lab4chain-rm342579
+  labels:
+    app: blog-django-py
+    app.kubernetes.io/component: blog-django-py
+    app.kubernetes.io/instance: blog-django-py
+    app.kubernetes.io/name: python
+    app.kubernetes.io/part-of: blog-django-py-app
+    app.openshift.io/runtime: python
+    app.openshift.io/runtime-version: 3.8-ubi7
+spec:
+  ports:
+    - name: 8080-tcp
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
+  selector:
+    app: blog-django-py
+    deploymentconfig: blog-django-py
+  clusterIP: 172.30.126.185
+  type: ClusterIP
+  sessionAffinity: None
+status:
+  loadBalancer: {}
