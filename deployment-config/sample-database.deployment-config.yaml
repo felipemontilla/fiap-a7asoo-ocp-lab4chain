@@ -2,7 +2,7 @@ kind: DeploymentConfig
 apiVersion: apps.openshift.io/v1
 metadata:
   name: sample-database
-  namespace: italo
+  namespace: fiap-lab4chain-7asoo-group5
   labels:
     app: sample-database
 spec:

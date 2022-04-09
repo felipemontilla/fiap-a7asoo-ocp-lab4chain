@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: blog-django-py-config
-  namespace: italo
+  namespace: fiap-lab4chain-7asoo-group5
 data:
   blog_site_name: "7ASOO Grupo 5's Blog"
   blog_banner_color: red

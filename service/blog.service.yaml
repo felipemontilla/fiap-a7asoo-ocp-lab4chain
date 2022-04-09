@@ -4,7 +4,7 @@ metadata:
   annotations:
     app.openshift.io/vcs-uri: 'https://github.com/openshift-instruqt/blog-django-py'
   name: blog-django-py-service
-  namespace: italo
+  namespace: fiap-lab4chain-7asoo-group5
   labels:
     app: blog-django-py-git
     app.kubernetes.io/component: blog-django-py-git

@@ -56,4 +56,4 @@ Como o blog-django é baseado em um projeto GIT, configuramos uma estratégia de
 
 # Comandos executados para criação do ambiente
 Criação do projeto
-oc new-project fiap-lab4chain-rm342579
+`oc new-project fiap-lab4chain-7asoo-group5`

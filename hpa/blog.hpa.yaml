@@ -2,7 +2,7 @@ apiVersion: autoscaling/v2beta2
 kind: HorizontalPodAutoscaler
 metadata:
   name: blog-django-hpa
-  namespace: italo
+  namespace: fiap-lab4chain-7asoo-group5
 spec:
   scaleTargetRef:
     apiVersion: apps/v1

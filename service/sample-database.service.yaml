@@ -2,7 +2,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: sample-database-service
-  namespace: italo
+  namespace: fiap-lab4chain-7asoo-group5
   labels:
     app: sample-database-service
 spec:

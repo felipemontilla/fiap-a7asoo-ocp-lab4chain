@@ -2,7 +2,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: sample-database
-  namespace: italo
+  namespace: fiap-lab4chain-7asoo-group5
 spec:
   accessModes:
     - ReadWriteOnce
