@@ -1,0 +1,65 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: blog-django-py-git
+  generation: 2
+  namespace: italo
+  labels:
+    app: blog-django-py-git
+    app.kubernetes.io/component: blog-django-py-git
+    app.kubernetes.io/instance: blog-django-py-git
+    app.kubernetes.io/name: python
+    app.kubernetes.io/part-of: blog-django-py-git-app
+    app.openshift.io/runtime: python
+    app.openshift.io/runtime-version: 3.8-ubi7
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: blog-django-py-git
+  template:
+    metadata:
+      labels:
+        app: blog-django-py-git
+        deploymentconfig: blog-django-py-git
+    spec:
+      containers:
+        - name: blog-django-py-git
+          image: image-registry.openshift-image-registry.svc:5000/italo/blog-django-py
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          resources: {}
+          imagePullPolicy: Always
+          env:
+            - name: BLOG_SITE_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: blog-django-py-config
+                  key: blog_site_name
+            - name: BLOG_BANNER_COLOR
+              valueFrom:
+                configMapKeyRef:
+                  name: blog-django-py-config
+                  key: blog_banner_color
+            - name: DATABASE_SERVICE_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: blog-django-secret
+                  key: db-service-name
+            - name: POSTGRESQL_USER
+              valueFrom:
+                secretKeyRef:
+                  name: blog-django-secret
+                  key: db-user
+            - name: POSTGRESQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: blog-django-secret
+                  key: db-pass
+            - name: POSTGRESQL_DATABASE
+              valueFrom:
+                secretKeyRef:
+                  name: blog-django-secret
+                  key: db-name     
+      restartPolicy: Always

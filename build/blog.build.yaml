@@ -1,0 +1,60 @@
+﻿kind: Build
+apiVersion: build.openshift.io/v1
+metadata:
+  annotations:
+    openshift.io/build-config.name: blog-django-py
+    openshift.io/build.number: '1'
+    openshift.io/build.pod-name: blog-django-py-1-build
+  name: blog-django-py-1
+  namespace: italo
+  ownerReferences:
+    - apiVersion: build.openshift.io/v1
+      kind: BuildConfig
+      name: blog-django-py
+      uid: 9fabb405-7bdd-45e5-9173-d8d8b1e7b22d
+      controller: true
+  labels:
+    app: blog-django-py
+    app.kubernetes.io/part-of: blog-django-py-app
+    app.kubernetes.io/instance: blog-django-py
+    openshift.io/build-config.name: blog-django-py
+    app.kubernetes.io/component: blog-django-py
+    openshift.io/build.start-policy: Serial
+    buildconfig: blog-django-py
+    app.openshift.io/runtime: python
+    app.kubernetes.io/name: python
+    app.openshift.io/runtime-version: 3.8-ubi7
+spec:
+  nodeSelector: null
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'blog-django-py:latest'
+    pushSecret:
+      name: builder-dockercfg-n2bmr
+  resources: {}
+  triggeredBy:
+    - message: Image change
+      imageChangeBuild:
+        imageID: >-
+          image-registry.openshift-image-registry.svc:5000/openshift/python@sha256:c5d24b467168e31a134bc2ff5cd6927e89dd12859bef22bebbfddc27285401dc
+        fromRef:
+          kind: ImageStreamTag
+          namespace: openshift
+          name: 'python:3.8-ubi7'
+  strategy:
+    type: Source
+    sourceStrategy:
+      from:
+        kind: DockerImage
+        name: >-
+          image-registry.openshift-image-registry.svc:5000/openshift/python@sha256:c5d24b467168e31a134bc2ff5cd6927e89dd12859bef22bebbfddc27285401dc
+      pullSecret:
+        name: builder-dockercfg-n2bmr
+  postCommit: {}
+  serviceAccount: builder
+  source:
+    type: Git
+    git:
+      uri: 'https://github.com/openshift-instruqt/blog-django-py'
+    contextDir: /
